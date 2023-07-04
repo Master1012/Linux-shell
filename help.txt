@@ -1,0 +1,68 @@
+echo - display a line of text on the terminal
+flags implemented: 
+-n (do not output the text in next line)
+-e (enable interpretation of backslash escapes)
+corner cases:
+using the other flags throws invalid command
+using echo -e in cases like hello\\n prints hello and new line character
+
+pwd - displays the current working directory of the shell
+flags implemented: 
+-P default (avoids all symlinks)
+-L (use pwd from environment even if it contains symlinks)
+corner cases:
+using the other flags throws invalid command
+if environment variable was not found throws error
+
+cd - change directories
+flags implemented: 
+.. going to parent directory
+~ going to the home directory
+-L opens the home directory
+corner cases:
+using the other flags throws invalid command
+using a wrong directory path gives invalid command error
+
+exit - exits the program
+
+ls - lists all the directory contents
+flags implemented:
+-a shows the hidden files
+-r shows the files in reverse order
+corner cases:
+using the other flags throws invalid command
+if fork fails, throws forking error
+
+date - prints the date on the terminal 
+flags implemented:
+-u shows the utc time
+-I shows the date
+corner cases:
+using the other flags throws invalid command
+if fork fails, throws forking error
+
+cat - displays the contents of the file
+flags implemented:
+-E displays $ at the end of each line
+-n displays the line number along with each line
+corner cases:
+cannot open a non existing file
+using the other flags throws invalid command
+if fork fails, throws forking error
+
+mkdir - make directories
+flags implemented:
+-p makes parent directories as needed
+-v prints a message after creating a directory
+corner cases:
+cannot make a already existing directory
+using the other flags throws invalid command
+if fork fails, throws forking error
+
+rm - remove directories
+flags implemented:
+-i asks user confirmation before removing a directory 
+-v prints a message after removing a directory
+corner cases:
+using the other flags throws invalid command
+if fork fails, throws forking error
